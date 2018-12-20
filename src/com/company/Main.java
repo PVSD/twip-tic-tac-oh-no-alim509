@@ -31,7 +31,7 @@ public class Main {
 
         if (turn == 1)
         {
-            while ()
+            while (DetermineWin.win(board))
         }
     }
 }
