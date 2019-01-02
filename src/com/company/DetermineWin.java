@@ -7,34 +7,60 @@ public class DetermineWin {
 
     String[][] determine;
 
-    public DetermineWin(String[][] determines)
+    public DetermineWin(String[][] d)
     {
-        determine = determines;
+        determine = d;
     }
 
-    public boolean win(String[][] determiness)
+    public static boolean winX(StringBuffer board1, StringBuffer board2, StringBuffer board3)
     {
-        boolean maybe;
+        boolean Xwins;
 
-        if (determine[0][0].equals(determine[0][1]) && determine[0][1].equals(determine[0][2]))
-            maybe = true;
-        else if (determine[1][0].equals(determine[1][1]) && determine[1][1].equals(determine[1][2]))
-            maybe = true;
-        else if (determine[2][0].equals(determine[2][1]) && determine[2][1].equals(determine[2][2]))
-            maybe = true;
-        else if (determine[0][0].equals(determine[1][0]) && determine[1][0].equals(determine[2][0]))
-            maybe = true;
-        else if (determine[0][1].equals(determine[1][1]) && determine[1][1].equals(determine[2][1]))
-            maybe = true;
-        else if (determine[0][2].equals(determine[1][2]) && determine[1][2].equals(determine[2][2]))
-            maybe = true;
-        else if (determine[0][0].equals(determine[1][1]) && determine[1][1].equals(determine[2][2]))
-            maybe = true;
-        else if (determine[0][2].equals(determine[1][1]) && determine[1][1].equals(determine[2][0]))
-            maybe = true;
+        if (board1.substring(1, 2).equals(board1.substring(5,6)) && board1.substring(5, 6).equals(board1.substring(9, 10)) && board1.substring(1, 2).equals("X"))
+            Xwins = true;
+        else if (board2.substring(1, 2).equals(board2.substring(5,6)) && board2.substring(5, 6).equals(board2.substring(9, 10)) && board2.substring(1, 2).equals("X"))
+            Xwins = true;
+        else if (board3.substring(1, 2).equals(board3.substring(5,6)) && board3.substring(5, 6).equals(board3.substring(9, 10)) && board3.substring(1, 2).equals("X"))
+            Xwins = true;
+        else if (board1.substring(1, 2).equals(board2.substring(1, 2)) && board2.substring(1, 2).equals(board3.substring(1, 2)) && board1.substring(1, 2).equals("X"))
+            Xwins = true;
+        else if (board1.substring(5, 6).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(5, 6)) && board1.substring(5, 6).equals("X"))
+            Xwins = true;
+        else if (board1.substring(9, 10).equals(board2.substring(9, 10)) && board2.substring(9, 10).equals(board3.substring(9, 10)) && board1.substring(9, 10).equals("X"))
+            Xwins = true;
+        else if (board1.substring(1, 2).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(9, 10)) && board1.substring(1, 2).equals("X"))
+            Xwins = true;
+        else if (board1.substring(9, 10).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(1, 2)) && board1.substring(9, 10).equals("X"))
+            Xwins = true;
         else
-            maybe = false;
+            Xwins = false;
 
-        return maybe;
+        return Xwins;
+    }
+
+    public static boolean winO(StringBuffer board1, StringBuffer board2, StringBuffer board3)
+    {
+        boolean Owins;
+
+        if (board1.substring(1, 2).equals(board1.substring(5,6)) && board1.substring(5, 6).equals(board1.substring(9, 10)) && board1.substring(1, 2).equals("O"))
+            Owins = true;
+        else if (board2.substring(1, 2).equals(board2.substring(5,6)) && board2.substring(5, 6).equals(board2.substring(9, 10)) && board2.substring(1, 2).equals("O"))
+            Owins = true;
+        else if (board3.substring(1, 2).equals(board3.substring(5,6)) && board3.substring(5, 6).equals(board3.substring(9, 10)) && board3.substring(1, 2).equals("O"))
+            Owins = true;
+        else if (board1.substring(1, 2).equals(board2.substring(1, 2)) && board2.substring(1, 2).equals(board3.substring(1, 2)) && board1.substring(1, 2).equals("O"))
+            Owins = true;
+        else if (board1.substring(5, 6).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(5, 6)) && board1.substring(5, 6).equals("O"))
+            Owins = true;
+        else if (board1.substring(9, 10).equals(board2.substring(9, 10)) && board2.substring(9, 10).equals(board3.substring(9, 10)) && board1.substring(9, 10).equals("O"))
+            Owins = true;
+        else if (board1.substring(1, 2).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(9, 10)) && board1.substring(1, 2).equals("O"))
+            Owins = true;
+        else if (board1.substring(9, 10).equals(board2.substring(5, 6)) && board2.substring(5, 6).equals(board3.substring(1, 2)) && board1.substring(9, 10).equals("O"))
+            Owins = true;
+        else
+            Owins = false;
+
+        return Owins;
     }
 }
